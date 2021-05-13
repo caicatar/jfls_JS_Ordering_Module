@@ -192,13 +192,13 @@ function receipt() {
 					price += Number(price_total[i].value);
 					//console.log(price);
 				}
-        //end of code block
+        	   //end of code block
 		   document.write("<html><head><title>Receipt</title>");
-           document.write("<h1 align=center>Kape Garahe</h1>");
+                   document.write("<h1 align=center>Kape Garahe</h1>");
 		   document.write("<h3 align=center>Total Services</h3>");
-           document.write("<div id=div1>");
-           document.write("<table border=1 align=center cellpadding=5 cellspacing=5 align=center bgcolor =brown>");
-           document.write("<tr>");
+                   document.write("<div id=div1>");
+                   document.write("<table border=1 align=center cellpadding=5 cellspacing=5 align=center bgcolor =brown>");
+          	   document.write("<tr>");
 		   document.write("<th>Quantity</th>");
 		   document.write("<th>Description</th>");
 		   document.write("<th>Price</th>");
