@@ -177,37 +177,42 @@ function receipt() {
 		//Update: Changed Variables and specified each input as "Item"
 		//create variables for items ( item1 - item7) - dynamic via for loop
 		var totalsum = 1;
-		var item = [];
+		var item_coffee = ["Mocha", "White Mocha", "Caramel", "Hazelnut", "Almond Delight", 
+		"White Forest", "Black Forest"];
 		// define class "price_coffee"
 		var price_total = document.getElementsByClassName("price_coffee");
 		var qty_total = document.getElementsByClassName("amt");
 		var price = 0;
 		var qty = 0;
+		var description = "";
+		var item = "";
 				//loop to iterate values
-				for (var i = 0; i < 7; ++i) {
+				for (var i = 0; i < qty_total.length; ++i) {
+					if(qty_total[i].value){
 					//total quantity from loop iterations ( amt class )
 					qty += Number(qty_total[i].value);
-					//console.log(qty);
 					//total price from loop iterations ( coffee class )
 					price += Number(price_total[i].value);
-					//console.log(price);
+					item = item_coffee[i];
+					
 				}
-        	   //end of code block
+			}
+        //end of code block
 		   document.write("<html><head><title>Receipt</title>");
-                   document.write("<h1 align=center>Kape Garahe</h1>");
+           document.write("<h1 align=center>Kape Garahe</h1>");
 		   document.write("<h3 align=center>Total Services</h3>");
-                   document.write("<div id=div1>");
-                   document.write("<table border=1 align=center cellpadding=5 cellspacing=5 align=center bgcolor =brown>");
-          	   document.write("<tr>");
+           document.write("<div id=div1>");
+           document.write("<table border=1 align=center cellpadding=5 cellspacing=5 align=center bgcolor =brown>");
+           document.write("<tr>");
 		   document.write("<th>Quantity</th>");
 		   document.write("<th>Description</th>");
 		   document.write("<th>Price</th>");
 		   document.write("</tr>");
 		   document.write("<tr>");
 		   //Quantity done
-           document.write("<td><input type=text id=nog name=nog value='" + qty +"' readonly</td>");
+          document.write("<td><input type=text id=nog name=nog value='" + qty +"' readonly</td>");
 		   //Items will be appended and clustered alongside qty
-           document.write("<td><input type=text id=price name=price value='" + 'Mocha_Test' +"' readonly</td>");
+           document.write("<td><input type=text id=price name=price value='" + item +"' readonly</td>");
 		   //price > needs to be only counted where qty is present 
 		   document.write("<td><input type=text id=price name=price value='" + price + "' readonly</td>");
 		   document.write("</tr>");
